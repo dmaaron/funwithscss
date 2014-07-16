@@ -1,7 +1,7 @@
 /*variables*/
 $cheese_color: yellow;
 $my_blue: #3333AA;
-
+$my_white: #000;
 $my_green: #33AA33;
 $my_red: #AA1111;
 
@@ -10,17 +10,29 @@ $my_red: #AA1111;
 	font-family: Helvetica, sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	color:blue;
+	color:$my_blue;
 }
 
+@mixin small_lists {
+	width:120px;
+}
 
 @mixin un_hip_font {
 	font: {
 	font-family: Helvetica, sans-serif;
-	size: 10px;
+	size: 25px;
 	font-weight: italic;
 	}	
 	color: $my_red;
+}
+
+@mixin dip_hip_font {
+	font: {
+	font-family: Helvetica, sans-serif;
+	size: 30px;
+	font-weight: bold;
+	}	
+	color: $my_white;
 }
 
 #main_container {
@@ -28,13 +40,26 @@ $my_red: #AA1111;
 	color: $my_blue;
 	ul li {
 	background-color: yellow;
+	list-style: none;
 	}
 } 
 
 .welcome_heading {
+	@include dip_hip_font;
+}
+
+.sub_welcome_heading {
 	@include un_hip_font;
 }
 
 #other_container {
 	@include hip_font;
+}
+
+#list_container { 
+	@include small_lists;
+	position:relative;
+	top:-10px;
+	left:-35px;
+	margin-left: 0px;
 }
