@@ -1,0 +1,40 @@
+/*variables*/
+$cheese_color: yellow;
+$my_blue: #3333AA;
+
+$my_green: #33AA33;
+$my_red: #AA1111;
+
+
+@mixin hip_font {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color:blue;
+}
+
+
+@mixin un_hip_font {
+	font: {
+	font-family: Helvetica, sans-serif;
+	size: 10px;
+	font-weight: italic;
+	}	
+	color: $my_red;
+}
+
+#main_container {
+	background-color: $my_green;
+	color: $my_blue;
+	ul li {
+	background-color: yellow;
+	}
+} 
+
+.welcome_heading {
+	@include un_hip_font;
+}
+
+#other_container {
+	@include hip_font;
+}
